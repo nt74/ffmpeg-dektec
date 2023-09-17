@@ -69,13 +69,21 @@ build() {
 	# Fasttools
 	#make tools/qt-faststart
 	# Docs
-	#make doc/ff{mpeg,play}.1
+	make doc/ff{mpeg,play}.1
+	# Rename man files
+	cd doc
+	rename ffmpeg ffmpeg-dektec *.1
+	rename ffplay ffplay-dektec *.1
 }
 
 package() {
 	# Custom standalone installation
 	install -Dm 755 ffmpeg-${_ffmpegver}/ffmpeg "$pkgdir"/usr/bin/ffmpeg-dektec
 	install -Dm 755 ffmpeg-${_ffmpegver}/ffplay "$pkgdir"/usr/bin/ffplay-dektec
+
+	# Install man pages
+	install -Dm644 -t "$pkgdir/usr/share/man/man1" ffmpeg-${_ffmpegver}/doc/ffmpeg-dektec*.1
+	install -Dm644 -t "$pkgdir/usr/share/man/man1" ffmpeg-${_ffmpegver}/doc/ffplay-dektec*.1
 
 	# Standard installation method
 	#make DESTDIR="$pkgdir" -C ffmpeg-${_ffmpegver} install install-man
