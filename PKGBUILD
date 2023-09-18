@@ -11,7 +11,6 @@ url="https://www.dektec.com/products/SDK/ffmpeg/"
 license=('custom: nonfree and unredistributable')
 depends=('dektec-drivers-dkms')
 makedepends=('yasm' 'sdl2')
-provides=('ffmpeg-dektec')
 source=("https://ffmpeg.org/releases/ffmpeg-${_ffmpegver}.tar.xz"{,.asc}
         "FFmpeg_v${pkgver}.tar.gz::https://www.dektec.com/products/SDK/ffmpeg/linux/downloads/FFmpeg_v${pkgver}.tar.gz"
         "LinuxSDK_v${_sdkver}.tar.gz::https://www.dektec.com/products/SDK/DTAPI/Downloads/LinuxSDK_v${_sdkver}.tar.gz"
@@ -24,7 +23,7 @@ sha256sums=('57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082'
             'SKIP'
             '18d5f0fc4ded9ccc28978fcf345125d4a91a765eb503e7e61ddacd6ede9be003'
             '144da46bb3c2be721682820ca33d4fc08d6545f31b3adbb906a90b5eb36e3fb3'
-            '3265a0bc296a525c365e714a821c98e3205a96740741234987e20fc19652cbe9'
+            '326ca3465aa61469bf8a9099a8d24c52234579a03ee3b86e093483c7be174422'
             'd1ad786df86354d218a70b306a50961736c0a6e2d2716bf8de3db31d79957df9'
             'bf563193f450ece58a93db6840c0db33875df945fa81477b9b02fb209d3bf57a'
             'fec03e133521486ca258ae34ddf093eb6aab23f848c4332c367aadbfeaefda04')
@@ -32,7 +31,7 @@ validpgpkeys=(FCF986EA15E6E293A5644F10B4322F04D67658D8) # issuer "ffmpeg-devel@f
 
 prepare() {
 	# https://www.dektec.com/products/SDK/ffmpeg/
-	patch -d ffmpeg-${_ffmpegver} -Np2 -i "$srcdir"/dektec_changes.patch
+	patch -d ffmpeg-${_ffmpegver} -Np1 -i "$srcdir"/dektec_changes.patch
 	# https://crbug.com/1251779
 	patch -d ffmpeg-${_ffmpegver} -Np1 -i "$srcdir"/040-ffmpeg-add-av_stream_get_first_dts-for-chromium.patch
 	# FS#77813: fix playing ogg files with mplayer
