@@ -1,6 +1,6 @@
-diff --unified --recursive --text a/ffmpeg-6.0/configure b/ffmpeg-6.0/configure
---- a/ffmpeg-6.0/configure	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/configure	2023-09-16 15:29:24.441115658 +0200
+diff --unified --recursive --text a/configure b/configure
+--- a/configure	2023-02-27 21:43:45.000000000 +0100
++++ b/configure	2023-09-16 15:29:24.441115658 +0200
 @@ -307,6 +307,7 @@
    --enable-lv2             enable LV2 audio filtering [no]
    --disable-lzma           disable lzma [autodetect]
@@ -60,9 +60,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/configure b/ffmpeg-6.0/configure
  enabled securetransport &&
      check_func SecIdentityCreate "-Wl,-framework,CoreFoundation -Wl,-framework,Security" &&
      check_lib securetransport "Security/SecureTransport.h Security/Security.h" "SSLCreateContext" "-Wl,-framework,CoreFoundation -Wl,-framework,Security" ||
-diff --unified --recursive --text a/ffmpeg-6.0/doc/indevs.texi b/ffmpeg-6.0/doc/indevs.texi
---- a/ffmpeg-6.0/doc/indevs.texi	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/doc/indevs.texi	2023-09-16 15:34:20.196929751 +0200
+diff --unified --recursive --text a/doc/indevs.texi b/doc/indevs.texi
+--- a/doc/indevs.texi	2023-02-27 21:43:45.000000000 +0100
++++ b/doc/indevs.texi	2023-09-16 15:34:20.196929751 +0200
 @@ -476,6 +476,77 @@
  
  @end itemize
@@ -141,9 +141,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/doc/indevs.texi b/ffmpeg-6.0/doc/
  @section dshow
  
  Windows DirectShow input device.
-diff --unified --recursive --text a/ffmpeg-6.0/doc/outdevs.texi b/ffmpeg-6.0/doc/outdevs.texi
---- a/ffmpeg-6.0/doc/outdevs.texi	2022-11-04 21:16:28.000000000 +0100
-+++ b/ffmpeg-6.0/doc/outdevs.texi	2023-09-16 15:36:34.648679554 +0200
+diff --unified --recursive --text a/doc/outdevs.texi b/doc/outdevs.texi
+--- a/doc/outdevs.texi	2022-11-04 21:16:28.000000000 +0100
++++ b/doc/outdevs.texi	2023-09-16 15:36:34.648679554 +0200
 @@ -267,6 +267,88 @@
  
  @end itemize
@@ -233,9 +233,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/doc/outdevs.texi b/ffmpeg-6.0/doc
  @section fbdev
  
  Linux framebuffer output device.
-diff --unified --recursive --text a/ffmpeg-6.0/fftools/Makefile b/ffmpeg-6.0/fftools/Makefile
---- a/ffmpeg-6.0/fftools/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/fftools/Makefile	2023-09-16 15:46:36.996719403 +0200
+diff --unified --recursive --text a/fftools/Makefile b/fftools/Makefile
+--- a/fftools/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/fftools/Makefile	2023-09-16 15:46:36.996719403 +0200
 @@ -19,9 +19,10 @@
      fftools/objpool.o           \
      fftools/sync_queue.o        \
@@ -248,9 +248,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/fftools/Makefile b/ffmpeg-6.0/fft
  ifdef HAVE_GNU_WINDRES
  OBJS-$(1) += fftools/fftoolsres.o
  endif
-diff --unified --recursive --text a/ffmpeg-6.0/libavcodec/Makefile b/ffmpeg-6.0/libavcodec/Makefile
---- a/ffmpeg-6.0/libavcodec/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavcodec/Makefile	2023-09-16 15:53:29.728370219 +0200
+diff --unified --recursive --text a/libavcodec/Makefile b/libavcodec/Makefile
+--- a/libavcodec/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/libavcodec/Makefile	2023-09-16 15:53:29.728370219 +0200
 @@ -55,6 +55,7 @@
         profiles.o                                                       \
         qsv_api.o                                                        \
@@ -259,9 +259,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavcodec/Makefile b/ffmpeg-6.0/
         utils.o                                                          \
         version.o                                                        \
         vlc.o                                                            \
-diff --unified --recursive --text a/ffmpeg-6.0/libavdevice/alldevices.c b/ffmpeg-6.0/libavdevice/alldevices.c
---- a/ffmpeg-6.0/libavdevice/alldevices.c	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavdevice/alldevices.c	2023-09-16 17:08:03.406493367 +0200
+diff --unified --recursive --text a/libavdevice/alldevices.c b/libavdevice/alldevices.c
+--- a/libavdevice/alldevices.c	2023-02-27 21:43:45.000000000 +0100
++++ b/libavdevice/alldevices.c	2023-09-16 17:08:03.406493367 +0200
 @@ -32,6 +32,8 @@
  extern const FFOutputFormat ff_caca_muxer;
  extern const AVInputFormat  ff_decklink_demuxer;
@@ -271,9 +271,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavdevice/alldevices.c b/ffmpeg
  extern const AVInputFormat  ff_dshow_demuxer;
  extern const AVInputFormat  ff_fbdev_demuxer;
  extern const FFOutputFormat ff_fbdev_muxer;
-diff --unified --recursive --text a/ffmpeg-6.0/libavdevice/Makefile b/ffmpeg-6.0/libavdevice/Makefile
---- a/ffmpeg-6.0/libavdevice/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavdevice/Makefile	2023-09-16 17:03:28.303193201 +0200
+diff --unified --recursive --text a/libavdevice/Makefile b/libavdevice/Makefile
+--- a/libavdevice/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/libavdevice/Makefile	2023-09-16 17:03:28.303193201 +0200
 @@ -22,6 +22,8 @@
  OBJS-$(CONFIG_CACA_OUTDEV)               += caca.o
  OBJS-$(CONFIG_DECKLINK_OUTDEV)           += decklink_enc.o decklink_enc_c.o decklink_common.o
@@ -283,9 +283,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavdevice/Makefile b/ffmpeg-6.0
  OBJS-$(CONFIG_DSHOW_INDEV)               += dshow_crossbar.o dshow.o dshow_enummediatypes.o \
                                              dshow_enumpins.o dshow_filter.o \
                                              dshow_pin.o dshow_common.o
-diff --unified --recursive --text a/ffmpeg-6.0/libavfilter/allfilters.c b/ffmpeg-6.0/libavfilter/allfilters.c
---- a/ffmpeg-6.0/libavfilter/allfilters.c	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavfilter/allfilters.c	2023-09-16 17:13:34.761423801 +0200
+diff --unified --recursive --text a/libavfilter/allfilters.c b/libavfilter/allfilters.c
+--- a/libavfilter/allfilters.c	2023-02-27 21:43:45.000000000 +0100
++++ b/libavfilter/allfilters.c	2023-09-16 17:13:34.761423801 +0200
 @@ -554,6 +554,7 @@
  extern const AVFilter ff_vsrc_smptehdbars;
  extern const AVFilter ff_vsrc_testsrc;
@@ -294,9 +294,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavfilter/allfilters.c b/ffmpeg
  extern const AVFilter ff_vsrc_yuvtestsrc;
  
  extern const AVFilter ff_vsink_nullsink;
-diff --unified --recursive --text a/ffmpeg-6.0/libavfilter/Makefile b/ffmpeg-6.0/libavfilter/Makefile
---- a/ffmpeg-6.0/libavfilter/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavfilter/Makefile	2023-09-16 17:12:22.176294464 +0200
+diff --unified --recursive --text a/libavfilter/Makefile b/libavfilter/Makefile
+--- a/libavfilter/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/libavfilter/Makefile	2023-09-16 17:12:22.176294464 +0200
 @@ -21,6 +21,7 @@
         framequeue.o                                                     \
         graphdump.o                                                      \
@@ -305,9 +305,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavfilter/Makefile b/ffmpeg-6.0
         version.o                                                        \
         video.o                                                          \
  
-diff --unified --recursive --text a/ffmpeg-6.0/libavfilter/vsrc_testsrc.c b/ffmpeg-6.0/libavfilter/vsrc_testsrc.c
---- a/ffmpeg-6.0/libavfilter/vsrc_testsrc.c	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavfilter/vsrc_testsrc.c	2023-09-16 17:22:02.580665030 +0200
+diff --unified --recursive --text a/libavfilter/vsrc_testsrc.c b/libavfilter/vsrc_testsrc.c
+--- a/libavfilter/vsrc_testsrc.c	2023-02-27 21:43:45.000000000 +0100
++++ b/libavfilter/vsrc_testsrc.c	2023-09-16 17:22:02.580665030 +0200
 @@ -88,6 +88,10 @@
  
      /* only used by haldclut */
@@ -742,9 +742,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavfilter/vsrc_testsrc.c b/ffmp
 +};
 +
 +#endif /* CONFIG_YUVFLAG_FILTER */
-diff --unified --recursive --text a/ffmpeg-6.0/libavformat/allformats.c b/ffmpeg-6.0/libavformat/allformats.c
---- a/ffmpeg-6.0/libavformat/allformats.c	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavformat/allformats.c	2023-09-16 17:25:41.949686067 +0200
+diff --unified --recursive --text a/libavformat/allformats.c b/libavformat/allformats.c
+--- a/libavformat/allformats.c	2023-02-27 21:43:45.000000000 +0100
++++ b/libavformat/allformats.c	2023-09-16 17:25:41.949686067 +0200
 @@ -512,6 +512,8 @@
  extern const AVInputFormat  ff_yop_demuxer;
  extern const AVInputFormat  ff_yuv4mpegpipe_demuxer;
@@ -754,9 +754,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavformat/allformats.c b/ffmpeg
  /* image demuxers */
  extern const AVInputFormat  ff_image_bmp_pipe_demuxer;
  extern const AVInputFormat  ff_image_cri_pipe_demuxer;
-diff --unified --recursive --text a/ffmpeg-6.0/libavformat/Makefile b/ffmpeg-6.0/libavformat/Makefile
---- a/ffmpeg-6.0/libavformat/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavformat/Makefile	2023-09-16 17:24:03.158616736 +0200
+diff --unified --recursive --text a/libavformat/Makefile b/libavformat/Makefile
+--- a/libavformat/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/libavformat/Makefile	2023-09-16 17:24:03.158616736 +0200
 @@ -27,6 +27,7 @@
         riff.o               \
         sdp.o                \
@@ -776,9 +776,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavformat/Makefile b/ffmpeg-6.0
  OBJS-$(CONFIG_SDNS_DEMUXER)              += sdns.o
  OBJS-$(CONFIG_SDP_DEMUXER)               += rtsp.o
  OBJS-$(CONFIG_SDR2_DEMUXER)              += sdr2.o
-diff --unified --recursive --text a/ffmpeg-6.0/libavutil/Makefile b/ffmpeg-6.0/libavutil/Makefile
---- a/ffmpeg-6.0/libavutil/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libavutil/Makefile	2023-09-16 17:31:15.049091139 +0200
+diff --unified --recursive --text a/libavutil/Makefile b/libavutil/Makefile
+--- a/libavutil/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/libavutil/Makefile	2023-09-16 17:31:15.049091139 +0200
 @@ -170,6 +170,7 @@
         timecode.o                                                       \
         tree.o                                                           \
@@ -787,9 +787,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libavutil/Makefile b/ffmpeg-6.0/l
         utils.o                                                          \
         xga_font_data.o                                                  \
         xtea.o                                                           \
-diff --unified --recursive --text a/ffmpeg-6.0/libswresample/Makefile b/ffmpeg-6.0/libswresample/Makefile
---- a/ffmpeg-6.0/libswresample/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libswresample/Makefile	2023-09-16 17:32:12.457392311 +0200
+diff --unified --recursive --text a/libswresample/Makefile b/libswresample/Makefile
+--- a/libswresample/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/libswresample/Makefile	2023-09-16 17:32:12.457392311 +0200
 @@ -14,6 +14,7 @@
         resample_dsp.o                        \
         swresample.o                          \
@@ -798,9 +798,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libswresample/Makefile b/ffmpeg-6
         version.o                             \
  
  OBJS-$(CONFIG_LIBSOXR) += soxr_resample.o
-diff --unified --recursive --text a/ffmpeg-6.0/libswscale/Makefile b/ffmpeg-6.0/libswscale/Makefile
---- a/ffmpeg-6.0/libswscale/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/libswscale/Makefile	2023-09-16 17:33:17.400414958 +0200
+diff --unified --recursive --text a/libswscale/Makefile b/libswscale/Makefile
+--- a/libswscale/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/libswscale/Makefile	2023-09-16 17:33:17.400414958 +0200
 @@ -17,6 +17,7 @@
         slice.o                                          \
         swscale.o                                        \
@@ -809,9 +809,9 @@ diff --unified --recursive --text a/ffmpeg-6.0/libswscale/Makefile b/ffmpeg-6.0/
         utils.o                                          \
         version.o                                        \
         yuv2rgb.o                                        \
-diff --unified --recursive --text a/ffmpeg-6.0/tests/Makefile b/ffmpeg-6.0/tests/Makefile
---- a/ffmpeg-6.0/tests/Makefile	2023-02-27 21:43:45.000000000 +0100
-+++ b/ffmpeg-6.0/tests/Makefile	2023-09-16 17:34:25.951512552 +0200
+diff --unified --recursive --text a/tests/Makefile b/tests/Makefile
+--- a/tests/Makefile	2023-02-27 21:43:45.000000000 +0100
++++ b/tests/Makefile	2023-09-16 17:34:25.951512552 +0200
 @@ -229,6 +229,7 @@
  include $(SRC_PATH)/tests/fate/qtrle.mak
  include $(SRC_PATH)/tests/fate/real.mak
